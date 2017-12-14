@@ -77,3 +77,22 @@ print soup.a.string
 
 print type(soup.a.string)
 # <class 'bs4.element.Comment'>
+
+
+##.content
+print soup.head.contents
+
+print soup.head.contents[0]
+
+print soup.head.children
+#<listiterator object at 0x7f71457f5710>
+
+for child in soup.body.children:
+  print child
+
+for tag in soup.find_all(text=['Tillie', 'Elsie', 'Lacie']):
+	print(tag.name)
+
+print("-------------string------------")
+for string in soup.strings:
+	print (repr(string))
