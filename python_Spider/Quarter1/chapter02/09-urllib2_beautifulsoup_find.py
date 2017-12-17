@@ -16,10 +16,18 @@ and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
 
+
 def hasClass_Id(tag):
 	return tag.has_attr("class") and tag.has_attr("id")
 
 soup = BeautifulSoup(html, "html.parser")
 
+for child in soup.head.children:
+	print(child)
+
 for tag in soup.find_all(hasClass_Id):
 	print tag.string
+	
+
+for child in soup.head.descendants:
+	print(child)
