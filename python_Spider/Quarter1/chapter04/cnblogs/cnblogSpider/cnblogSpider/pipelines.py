@@ -7,5 +7,14 @@
 
 
 class CnblogspiderPipeline(object):
+
     def process_item(self, item, spider):
+    	print("CnblogspiderPipeline")
+        return item
+
+
+class CnblogspiderPipeline2(object):
+
+    def process_item(self, item, spider):
+    	print("CnblogspiderPipeline22222")
         return item

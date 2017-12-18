@@ -2,6 +2,7 @@
 import scrapy
 from cnblogSpider.items import CnblogspiderItem
 
+
 class CnblogSpider(scrapy.Spider):
     name = 'cnblog'
     allowed_domains = ['www.cnblogs.com']
@@ -28,7 +29,7 @@ class CnblogSpider(scrapy.Spider):
 	    	item['time'] = time
 	    	item['content'] = content 
 	    	
-	    	# yield item
+	    	yield item
 
 	    next_page = response.xpath(".//*[@id='homepage1_HomePageDays_homepage_bottom_pager']/div/a[last()]/@href").extract()[0]
 	    if next_page:
