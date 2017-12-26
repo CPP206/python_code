@@ -27,13 +27,14 @@ class CnblogSpider(scrapy.Spider):
 	    	item['url'] = url
 	    	item['title'] = title
 	    	item['time'] = time
-	    	item['content'] = content 
+	    	print(content)
+	    	item['content'] = content
 	    	
 	    	yield item
 
-	    next_page = response.xpath(".//*[@id='homepage1_HomePageDays_homepage_bottom_pager']/div/a[last()]/@href").extract()[0]
+	    next_page = response.selector.re(u'<a href="(\S*)">下一页</a>')
 	    if next_page:
-	    	yield scrapy.Request(url=next_page, callback=self.parse)
+	    	yield scrapy.Request(url=next_page[0], callback=self.parse)
 	    	# items.append(item)
 
 	    #直接返回最后数据

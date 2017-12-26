@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<items>
-<item><url>http://www.cnblogs.com/miqi1992/p/7899844.html</url><content>摘要: 本章将结合先前所学的爬虫和正则表达式知识，做一个简单的爬虫案例，更多内容请参考: "Python学习指南" 现在拥有了正则表达式这把神兵利器，我们就可以进行对爬取到的全部网页源代码进行筛选了。 下面我们一起尝试一下爬取内涵段子网站： http://www.neihan8.com/article/li</content><time>2017年11月26日</time><title>Python爬虫(十一)_案例：使用正则表达式的爬虫</title></item>
-<item><url>http://www.cnblogs.com/miqi1992/p/7882028.html</url><content>摘要: Requests：让HTTP服务人类 虽然Python的标准库中urllib2模块中已经包含了平常我们使用的大多数功能，但是它的API使用起来让人感觉不太好，而Requests自称"HTTP for Humans"，说明使用更简单方便。 Requests唯一的一个非转基因的Python HTTP库，</content><time>2017年11月23日</time><title>Python爬虫(八)_Requests的使用</title></item>
-<item><url>http://www.cnblogs.com/miqi1992/p/7880414.html</url><content>摘要: urllib2的异常错误处理 在我们用 方法发出一个请求时，如果 不能处理这个response，就产生错误。 这里主要说的是URLError和HTTPError,以及对它们的错误处理。 URLError URLError产生的原因主要有： 1. 没有网络连接 2. 服务器链接失败 3. 找不到指定的</content><time>2017年11月22日</time><title>python爬虫(七)_urllib2：urlerror和httperror</title></item>
-<item><url>http://www.cnblogs.com/miqi1992/p/7872785.html</url><content>摘要: 本文将介绍handler处理器和自定义opener，更多内容请参考: "python学习指南" opener和handleer 1. 我们之前一直使用的是urllib2.urlopen(url)这种形式来打开网页，它是一个特殊的opener(也就是模块帮我们建好的)，opener是urllib2.O</content><time>2017年11月21日</time><title>python爬虫(六)_urllib2：handle处理器和自定义opener</title></item>
-<item><url>http://www.cnblogs.com/miqi1992/p/7841599.html</url><content>摘要: 本篇将介绍urllib2的Get和Post方法，更多内容请参考: "python学习指南" urllib2默认只支持HTTP/HTTPS的GET和POST方法 urllib.urlencode() urllib和urllib2都是接受URL请求的相关参数，但是提供了不同的功能。两个最显著的不同如下：</content><time>2017年11月15日</time><title>python爬虫(五)_urllib2:Get请求和Post请求</title></item>
-</items>

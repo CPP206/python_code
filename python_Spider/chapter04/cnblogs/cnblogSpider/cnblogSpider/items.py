@@ -14,3 +14,12 @@ class CnblogspiderItem(scrapy.Item):
     time = scrapy.Field()
     title = scrapy.Field()
     content = scrapy.Field()
+
+
+class TencentItem(scrapy.Item):
+	name = scrapy.Field()
+	detailLink = scrapy.Field()
+	positionInfo = scrapy.Field()
+	peopleNumber = scrapy.Field()
+	workLocation = scrapy.Field()
+	publishTime = scrapy.Field()
