@@ -33,7 +33,7 @@ ROBOTSTXT_OBEY = True
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -69,7 +69,7 @@ ITEM_PIPELINES = {
 	# 'cnblogSpider.pipelines.CnblogJsonPipeline':10,
 	# 'cnblogSpider.pipelines.CnblogspiderPipeline': 300,
  	# 'cnblogSpider.pipelines.CnblogspiderPipeline2': 100
- 	'cnblogSpider.pipelines.TencentJsonPipeline' : 100
+ 	# 'cnblogSpider.pipelines.TencentJsonPipeline' : 100
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -92,3 +92,6 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+#是否遵循robot协议
+ROBOTSTXT_OBEY = False
