@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2417b28f-55e6-462b-9b83-7c6e7aa10674" name="阿里云Ubuntu" url="http://106.14.217.78">
+        <fileTransfer host="106.14.217.78" port="22" rootFolder="/home/chenqi/python/python_code" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
