@@ -46,12 +46,15 @@ COOKIES_ENABLED = True
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+#spider中间件
 #SPIDER_MIDDLEWARES = {
 #    'cnblogSpider.middlewares.CnblogspiderSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+
+#下载器中间件
 #DOWNLOADER_MIDDLEWARES = {
 #    'cnblogSpider.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
@@ -65,11 +68,13 @@ COOKIES_ENABLED = True
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 
+#管道中间件
 ITEM_PIPELINES = {
 	# 'cnblogSpider.pipelines.CnblogJsonPipeline':10,
 	# 'cnblogSpider.pipelines.CnblogspiderPipeline': 300,
  	# 'cnblogSpider.pipelines.CnblogspiderPipeline2': 100
  	# 'cnblogSpider.pipelines.TencentJsonPipeline' : 100
+    # 'cnblogSpider.pipelines.SaveGirlImageItem' : 10
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

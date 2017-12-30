@@ -23,3 +23,9 @@ class TencentItem(scrapy.Item):
 	peopleNumber = scrapy.Field()
 	workLocation = scrapy.Field()
 	publishTime = scrapy.Field()
+
+
+class SaveGirlImageItem(scrapy.Item):
+	name = scrapy.Field()
+	url = scrapy.Field()
+	image_urls = scrapy.Field()
