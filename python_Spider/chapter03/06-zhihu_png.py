@@ -17,11 +17,12 @@ def zhihuLogin():
 	headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0'}
 	#获取页面信息，找到需要POST的数据(并且记录到当前页面的Cookie)
 	html = sessiona.get('https://www.zhihu.com/#signin', headers=headers).content
-	e = etree.HTML(html)
-	print(html)
-	_xsrf = e.xpath('//input[@name="_xsrf"]/@value')
+	# e = etree.HTML(html)
+	# print(html)
+	# _xsrf = e.xpath('//input[@name="_xsrf"]/@value')
 	#找到name属性为_xsrf的input属性，取出value里的值。74c58fc1cc34fcad58dc3490473a127f
-	# _xsrf = BeautifulSoup(html, "lxml").find('input', attrs={'name', '_xsrf'}).get('value')
+	_xsrf = BeautifulSoup(html, "lxml").find('input', attrs={'name', '_xsrf'}).get('value')
+	print(type(_xsrf))
 
 	#取出验证码，r后面的值是Unix时间戳，time.time()
 	captchar_url = 'https://www.zhihu.com/captcha.gif?r=%d&type=login' % (time.time() * 1000)
@@ -38,7 +39,7 @@ def zhihuLogin():
 
 	response = sessiona.post('https://www.zhihu.com/login/email', data=data, headers=headers)
 
-	print response.text
+	print(response.text.encode('UTF-8')
 
 	response = sessiona.get('https://www.zhihu.com/people/chen-qi-26-76/answers', headers = headers)
 
