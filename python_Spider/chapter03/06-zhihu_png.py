@@ -39,9 +39,9 @@ def zhihuLogin():
 
 	response = sessiona.post('https://www.zhihu.com/login/email', data=data, headers=headers)
 
-	print(response.text.encode('UTF-8')
+	print(response.text.encode('UTF-8'))
 
-	response = sessiona.get('https://www.zhihu.com/people/chen-qi-26-76/answers', headers = headers)
+	# response = sessiona.get('https://www.zhihu.com/people/chen-qi-26-76/answers', headers = headers)
 
 	print(response.text.encode('utf-8'))
 
