@@ -1,7 +1,6 @@
 #-*- coding:utf-8 -*-
 import scrapy
 from scrapy.spiders import Request
-from scrapy import FormRequest   #FormRequest在scrapy.http包下面
 import logging
 import re
 from cnblogSpider.items import SaveGirlImageItem
