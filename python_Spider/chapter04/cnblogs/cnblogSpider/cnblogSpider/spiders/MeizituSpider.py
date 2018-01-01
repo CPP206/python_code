@@ -29,10 +29,14 @@ class MeiziTuSpider(scrapy.Spider):
     def parse(self, response):
         # print(response.body)
         for picdiv in response.css('div[class="pic"]'):
+            image_urls = picdiv.css('a[target="_blank"] img::attr(src)').extract_first()
+            image_split = image_urls.split("/")
+            image_name = image_split[-3]+ image_split[-2]+ image_split[-1]
             yield SaveGirlImageItem({
                 'name' : MeiziTuSpider.__remove_html_tags(picdiv.css('a[target="_blank"] img::attr(alt)').extract()[0]),#获取这组相片的名称
                 'url' : picdiv.css('a[target="_blank"] img::attr(src)').extract_first(),  #获取这组照片的链接
-                'image_urls' : [picdiv.css('a[target="_blank"] img::attr(src)').extract_first()]
+                'image_urls' : [picdiv.css('a[target="_blank"] img::attr(src)').extract_first()],
+                'images' : image_name
             })
 
         next_page = response.xpath(u'//div[@class="navigation"]//li/a[contains(.,"下一页")]/@href').extract_first()

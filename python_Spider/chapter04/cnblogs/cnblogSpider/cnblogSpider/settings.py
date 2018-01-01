@@ -78,7 +78,8 @@ ITEM_PIPELINES = {
  	# 'cnblogSpider.pipelines.CnblogspiderPipeline2': 100
  	# 'cnblogSpider.pipelines.TencentJsonPipeline' : 100
     # 'cnblogSpider.pipelines.SaveGirlImageItem' : 10
-    'cnblogSpider.pipelines.MeizituPipelineJson' :10
+    'cnblogSpider.pipelines.MeizituPipelineJson' :10,
+    'scrapy.pipelines.images.ImagesPipeline' : 1
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -107,3 +108,9 @@ ROBOTSTXT_OBEY = False
 
 #设置日志等级
 # LOG_LEVEL = "INFO"
+
+
+IMAGES_STORE="/home/chenqi/python/python_code/python_Spider/chapter04/cnblogs/cnblogSpider/cnblogSpider/images"
+
+IMAGES_URLS_FIELD = "image_urls"
+IMAGES_RESULT_FIELD="images"

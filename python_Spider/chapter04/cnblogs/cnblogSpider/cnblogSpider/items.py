@@ -29,3 +29,4 @@ class SaveGirlImageItem(scrapy.Item):
 	name = scrapy.Field()
 	url = scrapy.Field()
 	image_urls = scrapy.Field()
+	images = scrapy.Field()
