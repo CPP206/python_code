@@ -6,13 +6,27 @@
 # http://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+import logging
+###下面是妹子图案例的spider中间件
+logger = logging.getLogger(__name__)
+
+##start_requests函数调用这个spider中间件
+class ModifyStartRequest(object):
+
+    def process_start_requests(self, start_requests, spider):
+        logging.info("#### 22222222 #####strat_requests %s, spider %s ####"%(start_requests, spider))
+        last_request = []
+        for one_request in start_requests:
+            logging.info("#### one_request %s, spider %s ####"%(one_request, spider))
+            last_request.append(one_request)
+        logging.info("#### 2222222 ####last_request %s, spider %s ####"%(last_request, spider))
+        return last_request
 
 
 class CnblogspiderSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
-
     @classmethod
     def from_crawler(cls, crawler):
         # This method is used by Scrapy to create your spiders.

@@ -1,6 +1,6 @@
 import logging
 
-
+logger = logging.getLogger(__name__)
 ###
 class SpiderInputMiddleware(object):
     def process_spider_input(self, response, spider):

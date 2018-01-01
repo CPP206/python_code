@@ -35,8 +35,9 @@ class MeiziTuSpider(scrapy.Spider):
                 'image_urls' : [picdiv.css('a[target="_blank"] img::attr(src)').extract_first()]
             })
 
-            next_page = response.xpath('//div[@class="navigation"]//li/a/@href').extract_first()
-            if next_page is not None:
-                requesturl = "http://www.meizitu.com" + next_page
-                yield Request(requesturl, callback = self.parse, headers=self.user_header)
+        next_page = response.xpath(u'//div[@class="navigation"]//li/a[contains(.,"下一页")]/@href').extract_first()
+
+        if next_page is not None:
+            requesturl = "http://www.meizitu.com" + next_page
+            yield Request(requesturl, callback = self.parse, headers=self.user_header)
 

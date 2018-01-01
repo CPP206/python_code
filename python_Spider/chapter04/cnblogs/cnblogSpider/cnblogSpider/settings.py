@@ -47,9 +47,12 @@ COOKIES_ENABLED = True
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #spider中间件
-#SPIDER_MIDDLEWARES = {
-#    'cnblogSpider.middlewares.CnblogspiderSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   # 'cnblogSpider.middlewares.CnblogspiderSpiderMiddleware': 543,
+    'cnblogSpider.middlewares.ModifyStartRequest' : 643,
+    'cnblogSpider.spiderMiddleware.SpiderInputMiddleware' : 743,
+    'cnblogSpider.spiderMiddleware.SpiderOutputMiddleware': 843
+}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
@@ -75,6 +78,7 @@ ITEM_PIPELINES = {
  	# 'cnblogSpider.pipelines.CnblogspiderPipeline2': 100
  	# 'cnblogSpider.pipelines.TencentJsonPipeline' : 100
     # 'cnblogSpider.pipelines.SaveGirlImageItem' : 10
+    'cnblogSpider.pipelines.MeizituPipelineJson' :10
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -100,3 +104,6 @@ ITEM_PIPELINES = {
 
 #是否遵循robot协议
 ROBOTSTXT_OBEY = False
+
+#设置日志等级
+# LOG_LEVEL = "INFO"
