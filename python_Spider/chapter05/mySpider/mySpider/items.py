@@ -7,6 +7,13 @@
 
 import scrapy
 
+###(案例一)：手机App抓包爬虫
+class DouyuspiderItem(scrapy.Item):
+    name = scrapy.Field()   #存储照片的名字
+    imageUrls = scrapy.Field()  #照片的url路径
+    imagesPath = scrapy.Field()  #照片保存在本地的路径
+
+
 
 class MyspiderItem(scrapy.Item):
     # define the fields for your item here like:
