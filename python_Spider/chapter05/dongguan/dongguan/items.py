@@ -15,6 +15,8 @@ class DongguanItem(scrapy.Item):
 	number = scrapy.Field()
 	#帖子内容
 	content = scrapy.Field()
+	#帖子地址
+	url = scrapy.Field()
 	#帖子状态
 	status = scrapy.Field()
 	#帖子发表者 网友
