@@ -10,7 +10,7 @@ class TencentcrawlSpider(CrawlSpider):
     start_urls = ['http://hr.tencent.com/position.php?&start=0#a']
 
     rules = (
-        Rule(LinkExtractor(allow=(r'start=\d+')), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow=(r'start=\d+')), callback='parse_item'),
     )
 
     def parse_item(self, response):

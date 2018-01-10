@@ -69,5 +69,5 @@ class SunSpider(scrapy.Spider):
         #时间
         item['time'] = (response.xpath('//div[@class="cright"]//p//text()').extract()[0]).split("发言时间")[1].strip()
 
-    	yield item
+        yield item
 
