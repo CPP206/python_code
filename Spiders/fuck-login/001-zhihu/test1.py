@@ -20,3 +20,6 @@ m = MultipartEncoder(file_payload)
 
 print(m)
 print(m.content_type)
+
+resp = requests.post('http://www.baidu.com', headers = headers, data = m)
+print(resp.status_code)
