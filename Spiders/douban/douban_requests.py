@@ -1,8 +1,13 @@
 #-*- coding:utf-8 -*-
+#简单爬取豆瓣book首页的新书链接
 from bs4 import BeautifulSoup
 import requests
 import time
 import datetime
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 r = requests.get("https://book.douban.com")
@@ -29,7 +34,8 @@ class Info(object):
 		self.publisher = publisher
 		self.abstract = abstract
 
-new_book_html = soup.find('ul', class_='list-col5 list-express slide-item')
+new_book_html = soup.find('ul', class_='list-col list-col5 list-express slide-item')
+
 book_info_list = []
 
 for tag in new_book_html.find_all('li'):
@@ -63,18 +69,23 @@ def save():
 	file_name = "豆瓣" + today + "推荐书单"
 	with open(file_name +".md", "w") as file:
 		file.write("# "+ file_name)
-		file.write('\\n---')
+		file.write('\n---')
 	with open(file_name+'.md', 'a') as file:
 		num = 1
-		for book in book_info_list
-			file.write('\n\\n')
+		for book in book_info_list:
+			file.write('\n\n')
 			file.write('## ' + str(num) + '. '+book.title)
-			file.write('\\n')
+			file.write('\n')
 			file.write('!['+book.title +' cover img]('+ book.img+')')
-			file.write('\n\\n')
-			file.write('简介\\n')
-			file.write('---\\n')
-			file.write('')
+			file.write('\n\n')
+			file.write('### 简介\n')
+			file.write('---\n')
+			file.write('>' + book.abstract)
+			file.write('\n\n作者： ' + book.author)
+			file.write('\n\n出版时间：'+book.year)
+			file.write('\n\n出版社：'+book.publisher)
+			file.write('\n\n[更多...]('+book.link+')')
+			num += 1
 
 if __name__ == "__main__":
 	save()
