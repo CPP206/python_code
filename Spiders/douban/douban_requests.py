@@ -1,9 +1,15 @@
 #-*- coding:utf-8 -*-
 #简单爬取豆瓣book首页的新书链接
+'''
+	1、使用BeautifulSoup解析文件
+	2、写入文件md
+'''
+
 from bs4 import BeautifulSoup
 import requests
 import time
 import datetime
+
 
 import sys
 reload(sys)
