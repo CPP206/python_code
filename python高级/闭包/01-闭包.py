@@ -8,6 +8,7 @@ def test(number):
 	print("---3----")
 	return test_in
 
+
 ret = test(10)
 print('-'*30)
 ret(1)

@@ -1,0 +1,16 @@
+#-*- coding:utf-8 -*-
+
+#本篇主要讲解使用redis的测试案例
+import redis  #导入redis模块，通过python操作redis，也可以直接在redis主机的服务器操作缓存数据库。
+
+r = redis.Redis(host='localhost', port = 6379, decode_responses=True)  #host是redis主机，需要redis服务器和客户端都启动， redis默认端口是6379
+
+r.set('name', 'xiaopohai')  #key是'name', value是'xiaopohai'将键值对存入redis缓存
+
+print(r['name'])
+
+print(r.get('name'))  #取出键name对应的值
+
+print(type(r.get('name')))
+
+
